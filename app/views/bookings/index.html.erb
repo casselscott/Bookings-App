@@ -1,0 +1,45 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Booking List</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Client Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Appointment Date</th>
+      <th scope="col">Additional Information</th>
+      <th scope="col">Payment Type</th>
+      <th scope="col">Consultant Preference</th>
+    </tr>
+  </thead>
+ <tbody>
+ <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.client_name %></td>
+        <td><%= booking.email %></td>
+        <td><%= booking.phone %></td>
+        <td><%= booking.appointment_date %></td>
+        <td><%= booking.additional_information %></td>
+        <td><%= booking.payment_type %></td>
+        <td><%= booking.consultant_preference %></td>
+        <td>
+          <%= link_to "Show", booking, class: "btn btn-outline-primary btn-sm" %>
+          <%= link_to 'Delete', booking, method: :delete, class: "btn btn-outline-danger btn-sm"%>
+          <%= link_to 'Edit', edit_booking_path(booking), class: "btn btn-outline-primary btn-sm" %>
+          <% @bookings.each do |booking| %>
+          </td>  
+ 
+  </tbody>
+
+<% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New booking", new_booking_path %>
+
+

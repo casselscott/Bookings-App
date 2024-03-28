@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+<div class="container mt-5">
+  <div class="mt-4 p-5 bg-secondary text-white rounded">
+    <h1>Bookings</h1> 
+    <p> <%= render @booking %> </p> 
+  </div>
+</div>
+<br>
+<div>
+ 
+  <%= link_to "Edit this booking", edit_booking_path(@booking), class: "btn btn-outline-primary btn-sm" %> 
+
+  <%= link_to "Back to bookings", bookings_path, class: "btn btn-outline-primary btn-sm" %>
+
+  <%= button_to "Delete this Booking", @booking, method: :delete, class: "btn btn-outline-primary btn-sm" %>
+</div>
